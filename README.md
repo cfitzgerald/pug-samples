@@ -1,5 +1,5 @@
 # pug-samples
-All of the code in the .js, .pug, and .html files in /pug-samples-code is included in **pug-samples.md**!
+All of the code in the .js, .pug, and .html files in **/pug-samples-code** is included in **pug-samples.md**!
 
 ## Getting Started - Pug
 [https://pugjs.org/api/getting-started.html](https://pugjs.org/api/getting-started.html)
