@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  h3 Pages written by #{ user.name }
+  hr
+
+  form(method='GET' action='/wiki/search')
+    input(type='text' name='search')
+    button(type='submit') Search
+  hr
+
+  ul.list-unstyled
+    ul
+      //- {% autoescape false %}
+      each page in pages
+        li
+          //- #{ page | pageLink }

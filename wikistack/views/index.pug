@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h3 Pages
+  hr
+
+  form(method='GET' action='/wiki/search')
+    input(type='text' name='search')
+    button(type='submit') Search
+  hr
+
+  ul.list-unstyled
+    each page in pages
+      li
+        a(href=page.route) #{ page.title }

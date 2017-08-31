@@ -1,0 +1,37 @@
+extends layout
+
+block content
+
+  h3 Add a Page
+  hr
+  form(method='POST' action='/wiki/')
+
+    div.form-group
+      label.col-sm-2.control-label(for='name') Author Name
+      div.col-sm-10
+        input.form-control(name='name' type='text')
+
+    div.form-group
+      label.col-sm-2.control-label(for='email') Author Email
+      div.col-sm-10
+        input.form-control(name='email' type='text')
+
+    div.form-group
+      label.col-sm-2.control-label(for='title') Page Title
+      div.col-sm-10
+        input.form-control(name='title' type='text')
+
+    div.form-group
+      label.col-sm-2.control-label(for='content') Page Content
+      div.col-sm-10
+        textarea(name='content')
+
+    //- div PLACEHOLDER FOR PAGE STATUS INPUT FIELD
+
+    div.form-group
+      label.col-sm-2.control-label(for='tags') Tags
+      div.col-sm-10
+        input.form-control(name='tags' type='text')
+
+    div.col-sm-offset-2.col-sm-10
+      button.btn.btn-primary(type='submit') Submit
