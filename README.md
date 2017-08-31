@@ -1,5 +1,5 @@
 # pug-samples
-Sample code for Pug template engine
+All of the code in the .js, .pug, and .html files in root are included in the exported Quiver note!
 
 ## Getting Started - Pug
 [https://pugjs.org/api/getting-started.html](https://pugjs.org/api/getting-started.html)
