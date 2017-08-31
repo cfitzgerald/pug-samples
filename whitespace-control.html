@@ -1,0 +1,44 @@
+//////////////////////
+// Acme Users PG
+// resulting HTML
+//////////////////////
+
+<html lang="en">
+<head>
+  <meta name="author" content="Colin FitzGerald" />
+  <title>Acme Users PG</title>
+  <!-- Bootstrap core CSS -->
+  <link href="/vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="/stylesheets/style.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Zilla+Slab:300,400,700" rel="stylesheet" />
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Acme Users <small>PG!</small></h1>
+      </div>
+      <ul class="nav nav-pills">
+        <li class="active">
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/users">Users (5)</a>
+        </li>
+        <li>
+          <a href="/users/managers">Managers (2)</a>
+        </li>
+      </ul>
+      <form class="well well-lg" method="POST" action="/users">
+        <div class="form-group">
+          <div class="input-group">
+            <input class="form-control" name="name" placeholder="add the name of a new user..." /><span class="input-group-addon"><input id="isManager" type="checkbox" name="is_manager"/>
+<label for="is_manager">Is Manager?</label></span><span class="input-group-btn"><button class="btn btn-success">Add User</button></span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</head>
+</html>

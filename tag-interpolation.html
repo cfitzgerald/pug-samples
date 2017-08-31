@@ -1,0 +1,19 @@
+//////////////////////
+// Acme Users PG
+// resulting HTML
+//
+// for:
+//    each lineItem in viewModel.cart.lineItems
+//      li.list-group-item #{ lineItem.product.name } #[span.label.label-default.pull-right Quantity: #{ lineItem.quantity }]
+//        form(action='/orders/' + viewModel.cart.id + '/lineItems/' + lineItem.id + '?_method=DELETE' method='POST')
+//          button.btn.btn-warning.btn-sm Remove From Cart
+//
+//////////////////////
+
+            <ul class="list-group">
+              // resulting interpolated tags...
+              <li class="list-group-item">Plumbus <span class="label label-default pull-right">Quantity: 99</span>
+                <form action="/orders/1/lineItems/1?_method=DELETE" method="POST">
+                  <button class="btn btn-warning btn-sm">Remove From Cart</button>
+                </form>
+              </li>

@@ -1,0 +1,79 @@
+//////////////////////
+// Acme Cart
+// ex: layout.pug
+//////////////////////
+
+html(lang='en')
+  head
+    meta(name='author' content='Colin FitzGerald')
+    title Acme Cart
+
+    <!-- Bootstrap core CSS -->
+    link(href='/vendor/bootstrap/dist/css/bootstrap.css' rel='stylesheet')
+    <!-- Custom styles -->
+    link(href='/stylesheets/style.css' rel='stylesheet')
+    <!-- Google Fonts -->
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,700|Zilla+Slab:300,400,700' rel='stylesheet')
+
+    body
+      div.container
+        div.page-header
+          h1 Acme Cart
+
+        block content
+
+//////////////////////
+// Acme Cart
+// ex: index.pug
+// extends layout.pug
+//////////////////////
+
+extends layout
+
+block content
+ div.row
+
+  div.col-sm-8
+    h2 Products
+    ul.list-group
+      each product in viewModel.products
+        li.list-group-item
+          form(action='/orders/' + viewModel.cart.id + '/lineItems' method='POST')
+            |
+            |
+            h3 #{ product.name }
+              button.btn.btn-primary.pull-right Add to Cart!
+              input(type='hidden' value=product.id name='productId')
+
+  div.col-sm-4
+    h2 Your Cart
+    div.well
+      ul.list-group
+        each lineItem in viewModel.cart.lineItems
+          // AWKWARD TAG INTERPOLATION HERE!
+          // resulting HTML for these 3 lines below...
+          li.list-group-item #{ lineItem.product.name } #[span.label.label-default.pull-right Quantity: #{ lineItem.quantity }]
+            form(action='/orders/' + viewModel.cart.id + '/lineItems/' + lineItem.id + '?_method=DELETE' method='POST')
+              button.btn.btn-warning.btn-sm Remove From Cart
+      form(action='/orders/' + viewModel.cart.id + '?_method=PUT' method='POST')
+        input(type='hidden' name='isCart' value='false')
+        hr
+        div.form-group
+          label Shipping Address
+          input.form-control(name='address')
+          hr
+          button.btn.btn-primary Place Order
+
+    h2 Order History
+    div#order
+      ul.list-group
+        each order in viewModel.orders
+          li.list-group-item
+            |
+            |
+            h4 Order# #[span.bold #{ order.id }]
+            // simpler example of above... #[ and #{
+            h4 Ship To: #[span.bold #{ order.address }]
+            ul.list-group
+              each lineItem in order.lineItems
+                li.list-group-item.order-items #{ lineItem.product.name } #[span.label.label-default.pull-right Quantity: #{ lineItem.quantity }]
