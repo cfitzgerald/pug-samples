@@ -1,6 +1,9 @@
 # pug-samples
 Sample code for Pug template engine
 
+## Getting Started - Pug
+[https://pugjs.org/api/getting-started.html](https://pugjs.org/api/getting-started.html)
+
 ## Pug bundle for Sublime Text 2/3:
 [https://packagecontrol.io/packages/Pug](https://packagecontrol.io/packages/Pug)
 
